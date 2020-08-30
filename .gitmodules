@@ -1,0 +1,6 @@
+[submodule "LiliArduino/lib/Adafruit-Motor-Shield-library"]
+	path = LiliArduino/lib/Adafruit-Motor-Shield-library
+	url = https://github.com/adafruit/Adafruit-Motor-Shield-library.git
+[submodule "LiliArduinoMini/lib/arduino-new-ping"]
+	path = LiliArduinoMini/lib/arduino-new-ping
+	url = https://bitbucket.org/teckel12/arduino-new-ping.git
