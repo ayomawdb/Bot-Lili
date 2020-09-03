@@ -218,13 +218,11 @@ void receiveEvent(int bytes)
     int incomingData = Wire.read();
     if (incomingData == USOUND_FRONT_BLOCKED && direction == DIRECTION_FORWARD)
     {
-        processCommand("BR");
         function = FUNCTION_ESCAPE;
         processCommand("HR");
     }
     if (incomingData == USOUND_BACK_BLOCKED && direction == DIRECTION_BACKWARD)
     {
-        processCommand("BR");
         function = FUNCTION_ESCAPE;
         processCommand("HR");
     }
@@ -232,11 +230,11 @@ void receiveEvent(int bytes)
     {
         if (direction == DIRECTION_FORWARD)
         {
-            processCommand("FW 250");
+            processCommand("FW " + speed);
         }
         else if (direction == DIRECTION_BACKWARD)
         {
-            processCommand("BK 250");
+            processCommand("BK " + speed);
         }
         function = FUNCTION_NORMAL;
     }
@@ -268,16 +266,7 @@ void loop()
 
     processCommand("BK 250");
     delay(3 * 1000);
-    //    processCommand("BK 150");
-    //    delay(3 * 1000);
-    //    processCommand("FW 255");
-    //    delay(3 * 1000);
-    //    processCommand("BK 255");
-    //    delay(3 * 1000);
 
-    //    processCommand("FW 200");
     processCommand("HR");
     delay(3 * 1000);
-    //    processCommand("BR");
-    //    delay(5 * 1000);
 }
